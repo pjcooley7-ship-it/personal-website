@@ -37,6 +37,17 @@ const LinkButton = ({ link, title }: { link: Project['link']; title: string }) =
     );
   }
   if (link.type === 'github') {
+    if (link.private) {
+      return (
+        <span className="inline-flex items-center gap-1.5 text-dim text-xs font-medium select-none">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+            <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
+            <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+          </svg>
+          Private repo
+        </span>
+      );
+    }
     return (
       <a
         href={link.url}

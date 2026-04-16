@@ -1,6 +1,6 @@
 export type ProjectLink =
   | { type: 'live'; url: string }
-  | { type: 'github'; url: string }
+  | { type: 'github'; url: string; private?: boolean }
   | { type: 'none' };
 
 export interface Project {
@@ -48,7 +48,7 @@ export const projects: Project[] = [
       'Upload a NetSuite or Excel export and the app calculates variances, applies configurable materiality thresholds, and runs a multi-step AI pipeline (Research → Draft → Validate → Refine) to produce audit-ready flux commentary — with confidence scoring and a feedback loop that learns your style over time.',
     category: 'AI Tool',
     stack: ['Python', 'Streamlit', 'OpenAI', 'Gemini', 'Vector Embeddings'],
-    link: { type: 'github', url: 'https://github.com/pjcooley7-ship-it/flux-commentary-generator' },
+    link: { type: 'github', url: 'https://github.com/pjcooley7-ship-it/flux-commentary-generator', private: true },
     featured: true,
     status: 'live',
   },
@@ -60,7 +60,7 @@ export const projects: Project[] = [
       'A Google Sheets add-on that reads manual journal entry line items and generates polished, audit-ready documentation — grouped by subsidiary, account, and memo — from a plain-English explanation. Eliminates repetitive write-up work for finance teams.',
     category: 'Automation',
     stack: ['Google Apps Script', 'OpenAI API', 'Google Sheets'],
-    link: { type: 'github', url: 'https://github.com/pjcooley7-ship-it/journal-entry-assistant' },
+    link: { type: 'github', url: 'https://github.com/pjcooley7-ship-it/journal-entry-assistant', private: true },
     status: 'live',
   },
   {
@@ -71,7 +71,7 @@ export const projects: Project[] = [
       'A standalone Google Apps Script that runs daily at 9am, navigates Drive to find the current month\'s close checklist, scans five accounting tabs for overdue incomplete tasks, and posts a formatted Block Kit summary to Slack — with user @mentions for the responsible owner.',
     category: 'Automation',
     stack: ['Google Apps Script', 'Slack API', 'Google Drive'],
-    link: { type: 'github', url: 'https://github.com/pjcooley7-ship-it/close-checklist-monitor' },
+    link: { type: 'github', url: 'https://github.com/pjcooley7-ship-it/close-checklist-monitor', private: true },
     status: 'live',
   },
   {
