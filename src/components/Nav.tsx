@@ -1,7 +1,6 @@
 const Nav = () => (
-  <nav className="max-w-5xl mx-auto px-6 py-5 flex items-center justify-between">
-    <span className="text-2xl font-bold text-ink tracking-tight">PJ Cooley</span>
-    <div className="flex items-center gap-5">
+  <nav className="max-w-5xl mx-auto px-6 pt-5 pb-3">
+    <div className="flex justify-end gap-5 mb-3">
       <a
         href="https://github.com/pjcooley7-ship-it"
         target="_blank"
@@ -19,6 +18,7 @@ const Nav = () => (
         LinkedIn
       </a>
     </div>
+    <span className="text-2xl font-bold text-ink tracking-tight">PJ Cooley</span>
   </nav>
 );
 
