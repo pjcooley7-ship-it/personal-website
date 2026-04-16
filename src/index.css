@@ -1,0 +1,31 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-cream font-sans text-ink antialiased;
+  }
+}
+
+@layer components {
+  .badge {
+    @apply inline-flex items-center gap-1.5 bg-accent-light text-accent text-xs font-semibold px-3 py-1 rounded-full;
+  }
+
+  .tag {
+    @apply inline-flex items-center bg-stone-100 text-muted text-xs font-medium px-2.5 py-1 rounded-full;
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center gap-1.5 bg-accent text-white text-xs font-semibold px-3 py-1.5 rounded-lg hover:bg-accent-dark transition-colors;
+  }
+
+  .btn-ghost {
+    @apply inline-flex items-center gap-2 text-muted text-sm font-medium hover:text-ink transition-colors;
+  }
+
+  .project-card {
+    @apply bg-white rounded-2xl p-7 shadow-sm border border-border hover:shadow-md hover:-translate-y-0.5 transition-all duration-200 flex flex-col;
+  }
+}

@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PJ Cooley — Portfolio Design Options</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=DM+Serif+Display&family=Space+Mono&family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@700;900&family=JetBrains+Mono:wght@400;500&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { background: #111; color: #fff; font-family: 'Inter', sans-serif; }
+
+.option-header {
+  padding: 40px 60px 24px;
+  border-bottom: 1px solid #333;
+  display: flex; align-items: center; justify-content: space-between;
+}
+.option-label { font-size: 11px; letter-spacing: 3px; text-transform: uppercase; color: #888; font-family: 'Space Mono', monospace; }
+.option-name { font-size: 22px; font-weight: 700; color: #fff; margin-top: 6px; }
+.option-desc { font-size: 13px; color: #666; margin-top: 4px; }
+.pick-btn {
+  background: #fff; color: #111; border: none; padding: 10px 24px;
+  font-size: 13px; font-weight: 600; cursor: pointer; letter-spacing: 0.5px;
+  font-family: 'Inter', sans-serif;
+}
+.pick-btn:hover { background: #ddd; }
+.divider { height: 60px; background: #111; display: flex; align-items: center; justify-content: center; }
+.divider span { font-size: 11px; letter-spacing: 3px; color: #444; text-transform: uppercase; font-family: 'Space Mono', monospace; }
+
+/* ─── OPTION 1: CLEAN MINIMAL ─────────────────────────────────────────────── */
+.opt1 { background: #ffffff; padding: 60px; font-family: 'Inter', sans-serif; }
+.opt1-nav { display: flex; justify-content: space-between; align-items: center; margin-bottom: 80px; }
+.opt1-name { font-size: 16px; font-weight: 600; color: #111; letter-spacing: -0.3px; }
+.opt1-links { display: flex; gap: 28px; }
+.opt1-links a { font-size: 14px; color: #555; text-decoration: none; font-weight: 500; }
+.opt1-hero { max-width: 640px; margin-bottom: 72px; }
+.opt1-tag { display: inline-block; font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: #999; font-weight: 500; margin-bottom: 16px; }
+.opt1-hero h1 { font-size: 42px; font-weight: 700; color: #111; line-height: 1.15; letter-spacing: -1px; margin-bottom: 20px; }
+.opt1-hero p { font-size: 17px; color: #555; line-height: 1.7; font-weight: 400; }
+.opt1-section-title { font-size: 12px; letter-spacing: 2.5px; text-transform: uppercase; color: #bbb; font-weight: 500; margin-bottom: 24px; }
+.opt1-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+.opt1-card {
+  border: 1px solid #e8e8e8; padding: 32px;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+.opt1-card:hover { border-color: #ccc; box-shadow: 0 4px 24px rgba(0,0,0,0.06); }
+.opt1-card-tag { font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: #bbb; font-weight: 500; margin-bottom: 12px; }
+.opt1-card h3 { font-size: 18px; font-weight: 600; color: #111; margin-bottom: 10px; letter-spacing: -0.3px; }
+.opt1-card p { font-size: 14px; color: #666; line-height: 1.6; margin-bottom: 20px; }
+.opt1-card-footer { display: flex; gap: 16px; }
+.opt1-chip { font-size: 11px; background: #f5f5f5; color: #888; padding: 4px 10px; font-weight: 500; }
+.opt1-link { font-size: 13px; font-weight: 600; color: #111; text-decoration: none; margin-left: auto; }
+
+/* ─── OPTION 2: DEVELOPER DARK ────────────────────────────────────────────── */
+.opt2 { background: #0d1117; padding: 60px; font-family: 'Inter', sans-serif; }
+.opt2-nav { display: flex; justify-content: space-between; align-items: center; margin-bottom: 80px; }
+.opt2-name { font-size: 15px; font-weight: 600; color: #e6edf3; font-family: 'JetBrains Mono', monospace; }
+.opt2-name span { color: #58a6ff; }
+.opt2-links { display: flex; gap: 24px; }
+.opt2-links a { font-size: 13px; color: #8b949e; text-decoration: none; font-family: 'JetBrains Mono', monospace; }
+.opt2-links a:hover { color: #58a6ff; }
+.opt2-hero { max-width: 660px; margin-bottom: 72px; }
+.opt2-prompt { font-size: 13px; color: #3fb950; font-family: 'JetBrains Mono', monospace; margin-bottom: 20px; }
+.opt2-hero h1 { font-size: 40px; font-weight: 700; color: #e6edf3; line-height: 1.2; letter-spacing: -0.5px; margin-bottom: 18px; }
+.opt2-hero h1 em { color: #58a6ff; font-style: normal; }
+.opt2-hero p { font-size: 16px; color: #8b949e; line-height: 1.7; }
+.opt2-section-title { font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: #58a6ff; font-family: 'JetBrains Mono', monospace; margin-bottom: 24px; }
+.opt2-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.opt2-card {
+  background: #161b22; border: 1px solid #30363d; padding: 28px;
+  position: relative; overflow: hidden;
+}
+.opt2-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: linear-gradient(90deg, #58a6ff, #3fb950); }
+.opt2-card:hover { border-color: #58a6ff55; }
+.opt2-card-tag { font-size: 11px; color: #3fb950; font-family: 'JetBrains Mono', monospace; margin-bottom: 12px; }
+.opt2-card h3 { font-size: 17px; font-weight: 600; color: #e6edf3; margin-bottom: 10px; }
+.opt2-card p { font-size: 14px; color: #8b949e; line-height: 1.6; margin-bottom: 20px; }
+.opt2-card-footer { display: flex; gap: 8px; flex-wrap: wrap; }
+.opt2-chip { font-size: 11px; background: #21262d; color: #58a6ff; padding: 3px 10px; border: 1px solid #30363d; font-family: 'JetBrains Mono', monospace; }
+
+/* ─── OPTION 3: EDITORIAL ──────────────────────────────────────────────────── */
+.opt3 { background: #fafafa; padding: 60px; font-family: 'Inter', sans-serif; }
+.opt3-nav { display: flex; justify-content: space-between; align-items: center; padding-bottom: 20px; border-bottom: 3px solid #111; margin-bottom: 60px; }
+.opt3-name { font-size: 22px; font-weight: 900; color: #111; font-family: 'Playfair Display', serif; letter-spacing: -0.5px; }
+.opt3-links { display: flex; gap: 24px; }
+.opt3-links a { font-size: 13px; color: #111; text-decoration: none; font-weight: 500; text-transform: uppercase; letter-spacing: 1px; }
+.opt3-kicker { font-size: 11px; letter-spacing: 3px; text-transform: uppercase; color: #c1440e; font-weight: 700; margin-bottom: 12px; }
+.opt3-hero { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; margin-bottom: 60px; align-items: start; }
+.opt3-hero h1 { font-size: 52px; font-weight: 900; color: #111; line-height: 1.05; font-family: 'Playfair Display', serif; letter-spacing: -1px; }
+.opt3-hero-right { padding-top: 8px; }
+.opt3-hero p { font-size: 17px; color: #444; line-height: 1.75; border-left: 3px solid #c1440e; padding-left: 20px; margin-top: 16px; }
+.opt3-divider { height: 1px; background: #ddd; margin-bottom: 32px; }
+.opt3-section-title { font-size: 11px; letter-spacing: 3px; text-transform: uppercase; color: #999; font-weight: 700; margin-bottom: 24px; }
+.opt3-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; }
+.opt3-card { border-top: 2px solid #111; padding-top: 24px; }
+.opt3-card-tag { font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: #c1440e; font-weight: 700; margin-bottom: 10px; }
+.opt3-card h3 { font-size: 20px; font-weight: 700; color: #111; font-family: 'Playfair Display', serif; line-height: 1.3; margin-bottom: 12px; }
+.opt3-card p { font-size: 14px; color: #555; line-height: 1.65; margin-bottom: 16px; }
+.opt3-card-footer { display: flex; gap: 16px; align-items: center; }
+.opt3-chip { font-size: 11px; color: #999; font-weight: 500; }
+.opt3-link { font-size: 12px; font-weight: 700; color: #c1440e; text-transform: uppercase; letter-spacing: 1px; text-decoration: none; margin-left: auto; }
+
+/* ─── OPTION 4: WARM PROFESSIONAL ─────────────────────────────────────────── */
+.opt4 { background: #f8f7f4; padding: 60px; font-family: 'DM Sans', sans-serif; }
+.opt4-nav { display: flex; justify-content: space-between; align-items: center; margin-bottom: 80px; }
+.opt4-name { font-size: 16px; font-weight: 700; color: #1c1917; }
+.opt4-dot { display: inline-block; width: 6px; height: 6px; background: #7c3aed; border-radius: 50%; margin: 0 2px 1px; }
+.opt4-links { display: flex; gap: 28px; }
+.opt4-links a { font-size: 14px; color: #78716c; text-decoration: none; font-weight: 500; }
+.opt4-links a:hover { color: #7c3aed; }
+.opt4-hero { max-width: 600px; margin-bottom: 80px; }
+.opt4-badge { display: inline-flex; align-items: center; gap: 6px; background: #ede9fe; color: #7c3aed; font-size: 12px; font-weight: 600; padding: 6px 14px; border-radius: 100px; margin-bottom: 24px; }
+.opt4-badge::before { content: '✦'; font-size: 10px; }
+.opt4-hero h1 { font-size: 44px; font-weight: 700; color: #1c1917; line-height: 1.15; letter-spacing: -1px; margin-bottom: 20px; }
+.opt4-hero p { font-size: 17px; color: #57534e; line-height: 1.7; }
+.opt4-section-title { font-size: 13px; font-weight: 600; color: #a8a29e; margin-bottom: 24px; text-transform: uppercase; letter-spacing: 1.5px; }
+.opt4-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+.opt4-card {
+  background: #fff; border-radius: 16px; padding: 32px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.04), 0 4px 16px rgba(0,0,0,0.04);
+  transition: box-shadow 0.2s, transform 0.2s;
+}
+.opt4-card:hover { box-shadow: 0 8px 32px rgba(0,0,0,0.10); transform: translateY(-2px); }
+.opt4-card-tag { font-size: 11px; letter-spacing: 1.5px; text-transform: uppercase; color: #a8a29e; font-weight: 600; margin-bottom: 12px; }
+.opt4-card h3 { font-size: 18px; font-weight: 700; color: #1c1917; margin-bottom: 10px; letter-spacing: -0.3px; }
+.opt4-card p { font-size: 14px; color: #78716c; line-height: 1.6; margin-bottom: 22px; }
+.opt4-card-footer { display: flex; gap: 8px; flex-wrap: wrap; }
+.opt4-chip { font-size: 12px; background: #f5f5f4; color: #78716c; padding: 4px 12px; border-radius: 100px; font-weight: 500; }
+.opt4-chip.accent { background: #ede9fe; color: #7c3aed; }
+
+/* ─── OPTION 5: BOLD GEOMETRIC ─────────────────────────────────────────────── */
+.opt5 { background: #fff; padding: 60px; font-family: 'Syne', sans-serif; }
+.opt5-nav { display: flex; justify-content: space-between; align-items: center; margin-bottom: 80px; }
+.opt5-name { font-size: 18px; font-weight: 800; color: #111; letter-spacing: -0.5px; }
+.opt5-name em { color: #f59e0b; font-style: normal; }
+.opt5-links { display: flex; gap: 24px; }
+.opt5-links a { font-size: 14px; color: #111; text-decoration: none; font-weight: 700; letter-spacing: 0.5px; }
+.opt5-hero { display: grid; grid-template-columns: 3fr 2fr; gap: 0; margin-bottom: 80px; align-items: center; border: 3px solid #111; }
+.opt5-hero-left { padding: 48px; border-right: 3px solid #111; }
+.opt5-hero h1 { font-size: 52px; font-weight: 800; color: #111; line-height: 1.0; letter-spacing: -2px; text-transform: uppercase; }
+.opt5-hero h1 em { color: #f59e0b; font-style: normal; }
+.opt5-hero-right { padding: 48px; }
+.opt5-hero p { font-size: 16px; color: #444; line-height: 1.65; font-family: 'DM Sans', sans-serif; font-weight: 400; }
+.opt5-hero-stats { display: flex; gap: 32px; margin-top: 32px; }
+.opt5-stat-num { font-size: 36px; font-weight: 800; color: #111; letter-spacing: -1px; display: block; }
+.opt5-stat-label { font-size: 12px; color: #888; text-transform: uppercase; letter-spacing: 1px; font-family: 'DM Sans', sans-serif; }
+.opt5-section-title { font-size: 11px; letter-spacing: 3px; text-transform: uppercase; color: #888; font-weight: 700; font-family: 'DM Sans', sans-serif; margin-bottom: 20px; }
+.opt5-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0; border: 3px solid #111; }
+.opt5-card { padding: 32px; position: relative; }
+.opt5-card:first-child { border-right: 3px solid #111; }
+.opt5-card-num { font-size: 64px; font-weight: 800; color: #f5f5f5; line-height: 1; position: absolute; top: 16px; right: 24px; letter-spacing: -2px; }
+.opt5-card-tag { font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: #f59e0b; font-weight: 700; font-family: 'DM Sans', sans-serif; margin-bottom: 12px; }
+.opt5-card h3 { font-size: 20px; font-weight: 800; color: #111; letter-spacing: -0.5px; margin-bottom: 12px; }
+.opt5-card p { font-size: 14px; color: #555; line-height: 1.6; margin-bottom: 20px; font-family: 'DM Sans', sans-serif; font-weight: 400; }
+.opt5-card-footer { display: flex; gap: 8px; flex-wrap: wrap; }
+.opt5-chip { font-size: 11px; background: #f5f5f5; color: #888; padding: 4px 10px; font-family: 'DM Sans', sans-serif; font-weight: 600; letter-spacing: 0.5px; }
+.opt5-chip.accent { background: #f59e0b; color: #111; }
+</style>
+</head>
+<body>
+
+<!-- ══════════════════════════════════════════════════════════
+     OPTION 1 — CLEAN MINIMAL
+     White bg · Inter · subtle borders · hover shadow · Google/Stripe feel
+══════════════════════════════════════════════════════════ -->
+<div class="option-header">
+  <div>
+    <div class="option-label">Option 01</div>
+    <div class="option-name">Clean Minimal</div>
+    <div class="option-desc">White · Inter · subtle 1px borders · hover shadow · Stripe / Vercel feel</div>
+  </div>
+</div>
+
+<div class="opt1">
+  <nav class="opt1-nav">
+    <div class="opt1-name">PJ Cooley</div>
+    <div class="opt1-links">
+      <a href="#">Projects</a>
+      <a href="#">GitHub</a>
+      <a href="#">LinkedIn</a>
+    </div>
+  </nav>
+
+  <div class="opt1-hero">
+    <div class="opt1-tag">Finance × AI</div>
+    <h1>Building AI tools that make finance teams move faster.</h1>
+    <p>CPA and revenue operations leader at Wolt, based in Zurich. I build automations and AI-powered products — from Gmail-scanning return trackers to Claude-powered monthly reporting.</p>
+  </div>
+
+  <div class="opt1-section-title">Selected Projects</div>
+  <div class="opt1-grid">
+    <div class="opt1-card">
+      <div class="opt1-card-tag">Web App</div>
+      <h3>Return Tracker Pro</h3>
+      <p>Tracks online returns from initiation to refund. Connects to Gmail to auto-detect return emails in 6 languages, then monitors shipping and refund status.</p>
+      <div class="opt1-card-footer">
+        <span class="opt1-chip">React</span>
+        <span class="opt1-chip">Supabase</span>
+        <span class="opt1-chip">Claude API</span>
+        <a class="opt1-link" href="#">View →</a>
+      </div>
+    </div>
+    <div class="opt1-card">
+      <div class="opt1-card-tag">AI App</div>
+      <h3>Wanderlust</h3>
+      <p>AI-powered group trip planner. Members submit preferences; Claude generates destination recommendations ranked by group consensus and travel logistics.</p>
+      <div class="opt1-card-footer">
+        <span class="opt1-chip">React</span>
+        <span class="opt1-chip">Supabase</span>
+        <span class="opt1-chip">Claude API</span>
+        <a class="opt1-link" href="#">View →</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="divider"><span>— Option 2 —</span></div>
+
+<!-- ══════════════════════════════════════════════════════════
+     OPTION 2 — DEVELOPER DARK
+     GitHub-dark palette · JetBrains Mono · glow accents
+══════════════════════════════════════════════════════════ -->
+<div class="option-header">
+  <div>
+    <div class="option-label">Option 02</div>
+    <div class="option-name">Developer Dark</div>
+    <div class="option-desc">GitHub-dark · JetBrains Mono · blue/green glow accents · code aesthetic</div>
+  </div>
+</div>
+
+<div class="opt2">
+  <nav class="opt2-nav">
+    <div class="opt2-name">pj<span>cooley</span>.dev</div>
+    <div class="opt2-links">
+      <a href="#">~/projects</a>
+      <a href="#">~/github</a>
+      <a href="#">~/linkedin</a>
+    </div>
+  </nav>
+
+  <div class="opt2-hero">
+    <div class="opt2-prompt">$ whoami</div>
+    <h1>CPA. Builder.<br><em>AI automation</em> for finance.</h1>
+    <p>Revenue operations leader at Wolt, Zurich. I write AI tools that automate the slow parts of finance — email triage, close monitoring, flux commentary, group travel planning, and more.</p>
+  </div>
+
+  <div class="opt2-section-title">// projects</div>
+  <div class="opt2-grid">
+    <div class="opt2-card">
+      <div class="opt2-card-tag">→ web-app</div>
+      <h3>Return Tracker Pro</h3>
+      <p>Multilingual Gmail scanner that auto-detects return emails in 6 languages, tracks shipment status, and surfaces refund timelines in a real-time dashboard.</p>
+      <div class="opt2-card-footer">
+        <span class="opt2-chip">React</span>
+        <span class="opt2-chip">TypeScript</span>
+        <span class="opt2-chip">Supabase</span>
+      </div>
+    </div>
+    <div class="opt2-card">
+      <div class="opt2-card-tag">→ ai-app</div>
+      <h3>Wanderlust</h3>
+      <p>Group trip planner powered by Claude API. Each member submits airport, dates, budget, and interests. AI synthesizes preferences and scores destinations by group fit.</p>
+      <div class="opt2-card-footer">
+        <span class="opt2-chip">React</span>
+        <span class="opt2-chip">Claude API</span>
+        <span class="opt2-chip">Supabase</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="divider"><span>— Option 3 —</span></div>
+
+<!-- ══════════════════════════════════════════════════════════
+     OPTION 3 — EDITORIAL / NEWSPAPER
+     Playfair serif · thick rules · red accent · print-inspired
+══════════════════════════════════════════════════════════ -->
+<div class="option-header">
+  <div>
+    <div class="option-label">Option 03</div>
+    <div class="option-name">Editorial</div>
+    <div class="option-desc">Playfair Display serif · thick rules · brick-red accent · print-inspired</div>
+  </div>
+</div>
+
+<div class="opt3">
+  <nav class="opt3-nav">
+    <div class="opt3-name">PJ Cooley</div>
+    <div class="opt3-links">
+      <a href="#">Work</a>
+      <a href="#">GitHub</a>
+      <a href="#">LinkedIn</a>
+    </div>
+  </nav>
+
+  <div class="opt3-kicker">CPA · Revenue Ops · AI Builder</div>
+  <div class="opt3-hero">
+    <div class="opt3-hero-left">
+      <h1>Finance doesn't have to be slow.</h1>
+    </div>
+    <div class="opt3-hero-right">
+      <p>I'm PJ Cooley — a CPA and revenue operations leader at Wolt, based in Zurich. I build AI-powered tools that automate the parts of finance that slow teams down: close monitoring, flux commentary, email triage, multilingual return tracking, and more.</p>
+    </div>
+  </div>
+
+  <div class="opt3-divider"></div>
+  <div class="opt3-section-title">Projects</div>
+  <div class="opt3-grid">
+    <div class="opt3-card">
+      <div class="opt3-card-tag">Web App</div>
+      <h3>Return Tracker Pro</h3>
+      <p>Gmail-connected return tracking dashboard. Auto-detects return emails in 6 languages, monitors carrier status, and tracks refund timelines.</p>
+      <div class="opt3-card-footer">
+        <span class="opt3-chip">React · Supabase · Claude</span>
+        <a class="opt3-link" href="#">View →</a>
+      </div>
+    </div>
+    <div class="opt3-card">
+      <div class="opt3-card-tag">AI App</div>
+      <h3>Wanderlust</h3>
+      <p>Group trip planner where members submit preferences; Claude synthesizes them into ranked destination recommendations with logistics context.</p>
+      <div class="opt3-card-footer">
+        <span class="opt3-chip">React · Claude API</span>
+        <a class="opt3-link" href="#">View →</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="divider"><span>— Option 4 —</span></div>
+
+<!-- ══════════════════════════════════════════════════════════
+     OPTION 4 — WARM PROFESSIONAL
+     DM Sans · cream bg · rounded cards · violet accent · Linear/Loom feel
+══════════════════════════════════════════════════════════ -->
+<div class="option-header">
+  <div>
+    <div class="option-label">Option 04</div>
+    <div class="option-name">Warm Professional</div>
+    <div class="option-desc">DM Sans · cream bg · rounded cards · violet accent · Linear / Loom feel</div>
+  </div>
+</div>
+
+<div class="opt4">
+  <nav class="opt4-nav">
+    <div class="opt4-name">PJ<div class="opt4-dot"></div>Cooley</div>
+    <div class="opt4-links">
+      <a href="#">Projects</a>
+      <a href="#">GitHub</a>
+      <a href="#">LinkedIn</a>
+    </div>
+  </nav>
+
+  <div class="opt4-hero">
+    <div class="opt4-badge">CPA × AI Builder</div>
+    <h1>Automating finance, one tool at a time.</h1>
+    <p>I'm a revenue operations leader at Wolt (Zurich) building AI-powered tools for finance teams — from Gmail return trackers and monthly close monitors to Claude-powered reporting and group travel planning.</p>
+  </div>
+
+  <div class="opt4-section-title">Projects</div>
+  <div class="opt4-grid">
+    <div class="opt4-card">
+      <div class="opt4-card-tag">Web App</div>
+      <h3>Return Tracker Pro</h3>
+      <p>Multilingual Gmail scanner that auto-detects return emails, tracks shipment status, and monitors refund timelines from a single dashboard.</p>
+      <div class="opt4-card-footer">
+        <span class="opt4-chip accent">React</span>
+        <span class="opt4-chip">Supabase</span>
+        <span class="opt4-chip">Claude</span>
+      </div>
+    </div>
+    <div class="opt4-card">
+      <div class="opt4-card-tag">AI App</div>
+      <h3>Wanderlust</h3>
+      <p>AI group trip planner — members submit preferences, Claude synthesizes them into destination recommendations scored by group fit and logistics.</p>
+      <div class="opt4-card-footer">
+        <span class="opt4-chip accent">React</span>
+        <span class="opt4-chip">Claude API</span>
+        <span class="opt4-chip">Supabase</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="divider"><span>— Option 5 —</span></div>
+
+<!-- ══════════════════════════════════════════════════════════
+     OPTION 5 — BOLD GEOMETRIC
+     Syne 800 · hard grid borders · amber accent · asymmetric layout
+══════════════════════════════════════════════════════════ -->
+<div class="option-header">
+  <div>
+    <div class="option-label">Option 05</div>
+    <div class="option-name">Bold Geometric</div>
+    <div class="option-desc">Syne 800 · hard 3px borders · amber accent · asymmetric grid · structured brutalist-lite</div>
+  </div>
+</div>
+
+<div class="opt5">
+  <nav class="opt5-nav">
+    <div class="opt5-name">PJ <em>Cooley</em></div>
+    <div class="opt5-links">
+      <a href="#">Projects</a>
+      <a href="#">GitHub</a>
+      <a href="#">LinkedIn</a>
+    </div>
+  </nav>
+
+  <div class="opt5-hero">
+    <div class="opt5-hero-left">
+      <h1>Finance.<br><em>AI.</em><br>Built.</h1>
+    </div>
+    <div class="opt5-hero-right">
+      <p>CPA and revenue operations leader at Wolt, Zurich. I build AI tools that automate the slow parts of finance — close checklists, flux commentary, Gmail triage, return tracking, and group travel planning.</p>
+      <div class="opt5-hero-stats">
+        <div>
+          <span class="opt5-stat-num">9+</span>
+          <span class="opt5-stat-label">Projects</span>
+        </div>
+        <div>
+          <span class="opt5-stat-num">6</span>
+          <span class="opt5-stat-label">Languages</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="opt5-section-title">Selected Work</div>
+  <div class="opt5-grid">
+    <div class="opt5-card">
+      <div class="opt5-card-num">01</div>
+      <div class="opt5-card-tag">Web App</div>
+      <h3>Return Tracker Pro</h3>
+      <p>Gmail-connected dashboard that scans for return emails in 6 languages, tracks shipments, and monitors refund timelines automatically.</p>
+      <div class="opt5-card-footer">
+        <span class="opt5-chip accent">React</span>
+        <span class="opt5-chip">TypeScript</span>
+        <span class="opt5-chip">Supabase</span>
+      </div>
+    </div>
+    <div class="opt5-card">
+      <div class="opt5-card-num">02</div>
+      <div class="opt5-card-tag">AI App</div>
+      <h3>Wanderlust</h3>
+      <p>Group trip planning powered by Claude API. Synthesizes each member's airport, budget, and interests into ranked destination picks.</p>
+      <div class="opt5-card-footer">
+        <span class="opt5-chip accent">Claude API</span>
+        <span class="opt5-chip">React</span>
+        <span class="opt5-chip">Supabase</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div style="height:60px;background:#111;"></div>
+
+</body>
+</html>
