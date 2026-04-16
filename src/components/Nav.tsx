@@ -1,7 +1,7 @@
 const Nav = () => (
-  <nav className="max-w-5xl mx-auto px-6 pt-5 pb-3">
+  <nav className="max-w-5xl mx-auto px-6 pt-5 pb-3 text-center">
     <span className="text-2xl font-bold text-ink tracking-tight">PJ Cooley</span>
-    <div className="flex gap-5 mt-3">
+    <div className="flex justify-center gap-5 mt-3">
       <a
         href="https://github.com/pjcooley7-ship-it"
         target="_blank"
