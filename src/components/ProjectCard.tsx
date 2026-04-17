@@ -90,14 +90,9 @@ const ProjectCard = ({ project }: { project: Project }) => (
 
     <div className="flex items-center justify-between gap-3 mt-auto pt-4 border-t border-border">
       <div className="flex flex-wrap gap-1.5">
-        {project.stack.slice(0, 3).map((tech) => (
+        {project.stack.map((tech) => (
           <span key={tech} className="tag">{tech}</span>
         ))}
-        {project.stack.length > 3 && (
-          <span className="tag" title={project.stack.slice(3).join(', ')}>
-            +{project.stack.length - 3}
-          </span>
-        )}
       </div>
       <LinkButton link={project.link} title={project.title} />
     </div>
