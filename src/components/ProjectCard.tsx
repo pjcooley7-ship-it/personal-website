@@ -94,7 +94,9 @@ const ProjectCard = ({ project }: { project: Project }) => (
           <span key={tech} className="tag">{tech}</span>
         ))}
         {project.stack.length > 3 && (
-          <span className="tag">+{project.stack.length - 3}</span>
+          <span className="tag" title={project.stack.slice(3).join(', ')}>
+            +{project.stack.length - 3}
+          </span>
         )}
       </div>
       <LinkButton link={project.link} title={project.title} />
