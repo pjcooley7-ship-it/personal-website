@@ -44,7 +44,7 @@ Add an entry to the `projects` array in `src/data/projects.ts`. Fields:
 - `id` — unique slug
 - `title`, `tagline`, `description`
 - `category` — `'Web App' | 'AI Tool' | 'Automation' | 'CLI Tool'`
-- `stack` — array of tech strings (first 3 shown, rest as +N)
+- `stack` — array of tech strings (all shown as individual tags now — no truncation)
 - `link` — `{ type: 'live', url }` | `{ type: 'github', url, private?: true }` | `{ type: 'none' }`
 - `status` — `'live' | 'in-progress' | 'planning'`
 
@@ -93,6 +93,7 @@ git add . && git commit -m "describe change" && git push
 - Make Claude Usage Tracker and Recipe Book repos public once ready
 - Add new projects as they're built in 2026 (goal: 12 apps)
 - Consider an "About" section with photo
+- **Set up a weekly GitHub Actions reminder** — a scheduled workflow that opens an issue on the personal-website repo every Monday prompting a portfolio review (any new projects to add? URLs or descriptions to update?). Site doesn't auto-sync from GitHub — projects.ts always needs a manual edit, so this reminder keeps it fresh.
 
 ## GitHub Repos Created This Session
 All created under `pjcooley7-ship-it`, currently **private**:
@@ -106,6 +107,12 @@ All created under `pjcooley7-ship-it`, currently **private**:
 | personal-website | ~/personal-website ← this repo (public) |
 
 ## Session Log
+
+### 2026-04-17
+- Added Daily Cryptoquip (live: https://daily-crypto-charm.lovable.app/) and Wanderlust Finance (expat personal finance tracker, in-progress) to projects.ts
+- Skipped v0-online-order-returns (archived repo, not featured)
+- Fixed stack tags: removed +N truncation — all tools now shown as individual tags on each card
+- Discussed auto-sync from GitHub: site does NOT auto-pull from repos; projects.ts is always a manual edit. Agreed to set up a weekly GitHub Actions reminder issue next session.
 
 ### 2026-04-16
 - Surveyed all local project folders and cross-referenced with GitHub for full project inventory
