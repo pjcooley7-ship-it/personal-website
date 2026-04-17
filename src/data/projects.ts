@@ -96,4 +96,26 @@ export const projects: Project[] = [
     link: { type: 'github', url: 'https://github.com/pjcooley7-ship-it/recipe-book' },
     status: 'in-progress',
   },
+  {
+    id: 'daily-crypto-charm',
+    title: 'Daily Cryptoquip',
+    tagline: 'A fresh word substitution puzzle every day',
+    description:
+      'A daily Cryptoquip puzzle app where each letter maps to a different letter of the alphabet. A new puzzle generates every day, with in-browser solving, hint reveals, and a timer. Built for word puzzle fans who want a quick daily brain workout.',
+    category: 'Web App',
+    stack: ['React', 'TypeScript', 'Vite', 'Tailwind'],
+    link: { type: 'live', url: 'https://daily-crypto-charm.lovable.app/' },
+    status: 'live',
+  },
+  {
+    id: 'wanderlust-mvp',
+    title: 'Wanderlust Finance',
+    tagline: 'Multi-currency personal finance app for expats',
+    description:
+      'A personal finance web app built for expats juggling multiple currencies, banks, and countries. Connects to US banks via Plaid, European banks via Salt Edge, and Swiss banks via CSV/CAMT file import. Includes AI-powered transaction categorization and multi-currency budget tracking.',
+    category: 'Web App',
+    stack: ['React', 'TypeScript', 'Supabase', 'Plaid', 'Claude API'],
+    link: { type: 'github', url: 'https://github.com/pjcooley7-ship-it/wanderlust-mvp' },
+    status: 'in-progress',
+  },
 ];
