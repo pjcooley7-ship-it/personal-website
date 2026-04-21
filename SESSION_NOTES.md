@@ -11,7 +11,7 @@ A personal portfolio site showcasing PJ Cooley's AI and automation projects — 
 ## Current Status
 - Fully built and live on Vercel
 - Auto-deploys on every push to `master`
-- All 7 projects populated with descriptions, stack tags, status badges, and links
+- 11 projects featured (as of 2026-04-21)
 
 ## Stack
 - React 18 + TypeScript + Vite
@@ -38,6 +38,9 @@ All project content lives in **`src/data/projects.ts`** — this is the only fil
 | Close Checklist Monitor | Automation | Private repo | Work project — repo private |
 | Claude Usage Tracker | CLI Tool | GitHub | https://github.com/pjcooley7-ship-it/claude-usage-tracker |
 | Recipe Book | Web App | GitHub | https://github.com/pjcooley7-ship-it/recipe-book |
+| Daily Cryptoquip | Web App | Live | https://daily-crypto-charm.lovable.app/ |
+| Geld | Web App | GitHub | https://github.com/pjcooley7-ship-it/geld (renamed from wanderlust-mvp) |
+| Buster | Web App | Private repo | https://github.com/pjcooley7-ship-it/buster-app |
 
 ### To add a new project:
 Add an entry to the `projects` array in `src/data/projects.ts`. Fields:
@@ -87,13 +90,13 @@ git add . && git commit -m "describe change" && git push
 - **Filter bar:** All / Web App / AI Tool / Automation / CLI Tool — client-side, no routing needed
 - **Vercel over GitHub Pages:** simpler for Vite/React, auto-deploys, supports custom domain later
 
-## Next Steps / Ideas
-- Add a custom domain (e.g. pjcooley.dev — ~$12/yr on Namecheap or Porkbun)
-- Add screenshots or short video demos per project card
-- Make Claude Usage Tracker and Recipe Book repos public once ready
-- Add new projects as they're built in 2026 (goal: 12 apps)
-- Consider an "About" section with photo
-- **Set up a weekly GitHub Actions reminder** — a scheduled workflow that opens an issue on the personal-website repo every Monday prompting a portfolio review (any new projects to add? URLs or descriptions to update?). Site doesn't auto-sync from GitHub — projects.ts always needs a manual edit, so this reminder keeps it fresh.
+## Todo
+- [ ] **Set up weekly GitHub Actions reminder** — `.github/workflows/portfolio-reminder.yml` that opens an issue every Monday with a review checklist (new projects? URL changes? repos to make public?). Site does NOT auto-sync; projects.ts always requires a manual edit.
+- [ ] Add a custom domain (e.g. pjcooley.dev — ~$12/yr on Namecheap or Porkbun)
+- [ ] Add screenshots or short video demos per project card
+- [ ] Make Claude Usage Tracker and Recipe Book repos public when ready, then remove `private: true` from their entries
+- [ ] Add new projects as they're built in 2026 (goal: 12 apps)
+- [ ] Consider an "About" section with photo
 
 ## GitHub Repos Created This Session
 All created under `pjcooley7-ship-it`, currently **private**:
@@ -107,6 +110,13 @@ All created under `pjcooley7-ship-it`, currently **private**:
 | personal-website | ~/personal-website ← this repo (public) |
 
 ## Session Log
+
+### 2026-04-21
+- Audited GitHub repos vs site — found `geld` (renamed from `wanderlust-mvp`) and `buster-app` missing; skipped archived `v0-online-order-returns`
+- Updated Geld card: corrected repo link to `pjcooley7-ship-it/geld`, fixed id slug
+- Added Buster card: swipe-to-match dad social app for Zürich expats, private repo, in-progress
+- Discussed weekly GitHub Actions portfolio reminder — agreed to set up next session
+- **Next:** Create `.github/workflows/portfolio-reminder.yml` — Monday cron that opens a review issue on the personal-website repo
 
 ### 2026-04-17
 - Added Daily Cryptoquip (live: https://daily-crypto-charm.lovable.app/) and Wanderlust Finance (expat personal finance tracker, in-progress) to projects.ts
