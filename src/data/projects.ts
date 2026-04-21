@@ -108,14 +108,25 @@ export const projects: Project[] = [
     status: 'live',
   },
   {
-    id: 'wanderlust-mvp',
-    title: 'Wanderlust Finance',
+    id: 'geld',
+    title: 'Geld',
     tagline: 'Multi-currency personal finance app for expats',
     description:
       'A personal finance web app built for expats juggling multiple currencies, banks, and countries. Connects to US banks via Plaid, European banks via Salt Edge, and Swiss banks via CSV/CAMT file import. Includes AI-powered transaction categorization and multi-currency budget tracking.',
     category: 'Web App',
     stack: ['React', 'TypeScript', 'Supabase', 'Plaid', 'Claude API'],
-    link: { type: 'github', url: 'https://github.com/pjcooley7-ship-it/wanderlust-mvp' },
+    link: { type: 'github', url: 'https://github.com/pjcooley7-ship-it/geld' },
+    status: 'in-progress',
+  },
+  {
+    id: 'buster-app',
+    title: 'Buster',
+    tagline: 'Swipe-to-match social app for dads in Zürich',
+    description:
+      'A Bumble BFF-style social networking app built for dads and dads-to-be — starting with Zürich\'s expat community. Swipe on profiles filtered by neighborhood, language, and kid age; match and chat; meet up. Includes onboarding, photo upload, language-aware discovery, and a waitlist for the soft launch.',
+    category: 'Web App',
+    stack: ['React', 'TypeScript', 'Express', 'Supabase', 'Tailwind'],
+    link: { type: 'github', url: 'https://github.com/pjcooley7-ship-it/buster-app', private: true },
     status: 'in-progress',
   },
 ];
